@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# commentaire rubocop
+# Affichage du plateau
 class Show
   def show_board(board, players)
     # affiche sur le terminal le plateau de jeu en cours

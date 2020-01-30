@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# commentaire rubocop
+# Création des joueurs
 class Player
   attr_accessor :name, :symbol, :victories
 

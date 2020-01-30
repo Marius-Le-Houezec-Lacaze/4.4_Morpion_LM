@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# commentaire tubocop
+# Interface utilisateur
 class Application
   def perform
     header
@@ -44,6 +44,7 @@ class Application
 
   def header
     puts ''
+    puts "\n"
     puts '    ___  ___                 _'
     puts '    |  \\/  |                (_)'
     puts '    | .  . | ___  _ __ _ __  _  ___  _ __'
@@ -70,7 +71,6 @@ class Application
     name
   end
 
-
   def easter_egg
     puts "\n\n  |-------------------------------------------------------------|"
     puts '  | "...zZzzz..zZzz...zZz...Hum ?! Tu vas jouer au morpion ?    |'
@@ -79,8 +79,8 @@ class Application
     puts '  |-------------------------------------------------------------|'
     puts '                                           |'
     puts '                                           |'
-    puts '                                           |______________   _/)/)'
-    puts '                                                            (-.- )'
-    puts "                                                          (\")(\")_o\n"
+    puts '                                           |_____________   _/)/)'
+    puts '                                                           (-.- )'
+    puts "                                                         (\")(\")_o\n"
   end
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# commentaire pour rubocop
+# Création des cases vides
 class BoardCase
   attr_accessor :case_id, :case_value
 

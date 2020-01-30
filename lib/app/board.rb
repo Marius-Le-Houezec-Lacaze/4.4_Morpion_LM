@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# commentaire pour rubocop
+# Gestion d'un tour
 class Board
   attr_accessor :boardcases, :count_turn
 

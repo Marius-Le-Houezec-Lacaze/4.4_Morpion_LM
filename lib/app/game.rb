@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# commentaire pour rubocop
+# Gestion d'une partie
 class Game
   attr_accessor :current_player, :status, :board, :players
 
@@ -65,6 +65,7 @@ class Game
 
   def header
     puts ''
+    puts "\n"
     puts '    ___  ___                 _'
     puts '    |  \\/  |                (_)'
     puts '    | .  . | ___  _ __ _ __  _  ___  _ __'
