@@ -13,7 +13,7 @@ Exécutez la commande ``bundle install``
 Veillez à mettre votre terminal en plein écran pour une expérience optimale
 
 ## Démarrage
-Lancez le fichier **app.rb** avec la commande ``ruby app.rb`` pour essayer le morpion
+Lancez le fichier **app.rb** avec la commande ``ruby app.rb`` pour essayer le morpion. Bonne partie !
 
 ## Auteur
 Luca Montaigut : https://github.com/luca-montaigut
