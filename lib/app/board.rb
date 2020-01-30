@@ -51,6 +51,7 @@ class Board
             puts ' Cette case est déjà à vous !'
           # cheating feature
           elsif square.case_id == play && square.case_value != ' ' && player.name == '3T-King'
+            square.case_value = player.symbol
             system("clear")
             header
             puts '=' * 50
@@ -62,8 +63,6 @@ class Board
             print " > #{play}\n"
             puts " Vous avez joué en #{play}."
             puts " 🖕 Cheh l'adversaire !"
-            square.case_value = player.symbol
-            puts " Vous avez joué en #{play}."
             valid_turn += 1
             @count_turn += 1
           elsif square.case_id == play && square.case_value != ' '
