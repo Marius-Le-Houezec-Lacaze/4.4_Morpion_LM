@@ -20,7 +20,7 @@ class Board
     @count_turn = 1
   end
 
-  def play_turn(player)
+  def play_turn(player, players)
     valid_turn = 0
     # 1) demande au bon joueur ce qu'il souhaite faire
     while valid_turn.zero?
@@ -35,6 +35,15 @@ class Board
         @boardcases.each do |square|
           if square.case_id == play && square.case_value == ' '
             square.case_value = player.symbol
+            system("clear")
+            header
+            puts '=' * 50
+            puts "                 Tour de #{player.name}"
+            puts '=' * 50
+            Show.new.show_board(self, players)
+            puts "\n\n #{player.name}, c'est votre tour."
+            puts ' Entrez les coordonnées de la case souhaitée svp'
+            print " > #{play}\n"
             puts " Vous avez joué en #{play}."
             valid_turn += 1
             @count_turn += 1
@@ -42,6 +51,16 @@ class Board
             puts ' Cette case est déjà à vous !'
           # cheating feature
           elsif square.case_id == play && square.case_value != ' ' && player.name == '3T-King'
+            system("clear")
+            header
+            puts '=' * 50
+            puts "                 Tour de #{player.name}"
+            puts '=' * 50
+            Show.new.show_board(self, players)
+            puts "\n\n #{player.name}, c'est votre tour."
+            puts ' Entrez les coordonnées de la case souhaitée svp'
+            print " > #{play}\n"
+            puts " Vous avez joué en #{play}."
             puts " 🖕 Cheh l'adversaire !"
             square.case_value = player.symbol
             puts " Vous avez joué en #{play}."
@@ -67,14 +86,28 @@ class Board
     # C
     return true if @boardcases[6].case_value == @boardcases[7].case_value && @boardcases[7].case_value == @boardcases[8].case_value && @boardcases[6].case_value != ' '
     # COLONNES
-    # 0
+    # 1
     return true if @boardcases[0].case_value == @boardcases[3].case_value && @boardcases[3].case_value == @boardcases[6].case_value && @boardcases[0].case_value != ' '
-    # B
+    # 2
     return true if @boardcases[1].case_value == @boardcases[4].case_value && @boardcases[4].case_value == @boardcases[7].case_value && @boardcases[1].case_value != ' '
-    # C
+    # 3
     return true if @boardcases[2].case_value == @boardcases[5].case_value && @boardcases[5].case_value == @boardcases[8].case_value && @boardcases[2].case_value != ' '
     # DIAGONALES
     return true if @boardcases[0].case_value == @boardcases[4].case_value && @boardcases[4].case_value == @boardcases[8].case_value && @boardcases[0].case_value != ' '
     return true if @boardcases[6].case_value == @boardcases[4].case_value && @boardcases[4].case_value == @boardcases[2].case_value && @boardcases[6].case_value != ' '
+  end
+
+  def header
+    puts ''
+    puts "\n"
+    puts '    ___  ___                 _'
+    puts '    |  \\/  |                (_)'
+    puts '    | .  . | ___  _ __ _ __  _  ___  _ __'
+    puts '    | |\\/| |/ _ \\| \'__| \'_ \\| |/ _ \\| \'_ \\'
+    puts '    | |  | | (_) | |  | |_) | | (_) | | | |'
+    puts '    \\_|  |_/\\___/|_|  | .__/|_|\\___/|_| |_|'
+    puts '                      | |'
+    puts '                      |_|'
+    puts ''
   end
 end

@@ -25,7 +25,7 @@ class Game
     # Affiche le plateau,
     Show.new.show_board(@board, @players)
     # Demande au joueur ce qu'il veut jouer
-    @board.play_turn(@current_player)
+    @board.play_turn(@current_player, players)
     # Verifie si le joueur a gagne
     print "\n Votre tour est terminé"
     gets.chomp
@@ -52,12 +52,14 @@ class Game
     puts '=' * 50
     puts '               Fin de la partie'
     puts '=' * 50
-    Show.new.show_board(@board, @players)
+
     if @board.victory?
-      print "\n\n    🏆 #{@current_player.name} a gagné ! Bravo #{@current_player.name} "
       @current_player.victories += 1
+      Show.new.show_board(@board, @players)
+      print "\n\n    🏆 #{@current_player.name} a gagné ! Bravo #{@current_player.name} "
       gets.chomp
     else
+      Show.new.show_board(@board, @players)
       print "\n\n               Égalité !\n"
     end
     @status = 'game end'
