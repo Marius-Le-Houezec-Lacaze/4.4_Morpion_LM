@@ -58,7 +58,7 @@ class Game
       @current_player.victories += 1
       gets.chomp
     else
-      puts ' Egalité !'
+      print "\n\n               Égalité !\n"
     end
     @status = 'game end'
   end
